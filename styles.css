@@ -1,0 +1,52 @@
+.page {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+}
+
+.nav {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__title {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__bar {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav__left-arrow,
+.nav__right-arrow {
+    width: 64px;
+    height: 64px;
+    background-color: #F2F2F7;
+    border: 0;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.nav__today {
+    width: 64px;
+    height: 64px;
+    background-color: #F2F2F7;
+    border: 0;
+    border-radius: 16px;
+    cursor: pointer;
+}
