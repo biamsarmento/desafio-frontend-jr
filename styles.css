@@ -149,6 +149,7 @@
     position: sticky;
     top: 0;
     background-color: white;
+    z-index: 4;
 }
 
 .first {
@@ -194,9 +195,14 @@
     opacity: 0.35;
 }
 
+.today {
+    color: #5856D6;
+}
+
 .calendar__unit {
     border-right: 3px solid #F2F2F7;
     border-bottom: 3px solid #F2F2F7;
+    padding: 16px;
 }
 
 .calendar__unit_hour {
@@ -219,11 +225,14 @@
     margin-right: -12px;
 }
 
-
 .event {
     border-radius: 12px;
     opacity: 0.32;
     background-color: #00C7BE;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    z-index: 3;
 }
 
 .event__title {
@@ -233,7 +242,11 @@
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
+    color: #110d0d80;
+    margin: 0;
 }
+
+
 
 /* Borders */
 
