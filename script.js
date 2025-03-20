@@ -215,7 +215,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const eventos = data.eventos;
     
             if (Array.isArray(eventos)) {
-                // Garantir que os eventos existentes sejam removidos antes de inserir os novos
                 limparEventos();
                 eventos.forEach(evento => {
                     inserirEventoNoCalendario(evento);
@@ -230,8 +229,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function inserirEventoNoCalendario(evento) {
         const dataInicio = new Date(evento.data_inicio);
-        // Removemos a data de fim, pois não será mais considerada
-        // const dataFim = new Date(evento.data_fim);
 
         const startOfWeek = new Date(currentDate);
         startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
@@ -263,11 +260,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const linhasHora = document.querySelectorAll('.calendar__unit_hour');
         let indiceLinha = -1;
 
-        // Procurar pela linha correspondente à hora de início
         linhasHora.forEach((elemento, index) => {
             const horaTexto = elemento.textContent.trim();
             
-            const horaFormatada = (horaInicio % 12 === 0 ? 12 : horaInicio % 12); // hora 12h no formato AM/PM
+            const horaFormatada = (horaInicio % 12 === 0 ? 12 : horaInicio % 12); 
             const sufixo = horaInicio < 12 ? ' AM' : ' PM';
             const horaNoCalendario = `${horaFormatada}${sufixo}`;
         
@@ -282,7 +278,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Verifique a célula que será preenchida
         const celula = document.querySelectorAll('.calendar__unit')[indiceLinha * 8 + (indiceColuna + 1)];
 
         if (celula) {
