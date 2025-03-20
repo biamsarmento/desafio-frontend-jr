@@ -170,7 +170,6 @@
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
-    /* color: black; */
     margin-bottom: 8px;
 }
 
@@ -181,7 +180,6 @@
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
-    /* color: black; */
     margin-bottom: 6px;
 }
 
@@ -232,6 +230,12 @@
     position: sticky;
     margin: 0;
     z-index: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event:hover {
+    opacity: 0.64;
 }
 
 .event__title {
@@ -241,8 +245,9 @@
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
-    color: #110d0d80;
     margin: 0;
+    padding: 8px 8px 0 8px;
+    text-overflow: ellipsis;
 }
 
 
