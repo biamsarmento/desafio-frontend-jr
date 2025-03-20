@@ -97,8 +97,8 @@
 .calendar {
     display: grid;
     width: 100%;
-    grid-template-columns: 0.77fr repeat(7, 1fr);
-    grid-template-rows: 1fr repeat(25, 64px);
+    grid-template-columns: 0.77fr 1.05fr repeat(6, 1fr);
+    grid-template-rows: 1fr repeat(24, 64px);
     overflow-y: scroll;
     border-top: 3px solid #F2F2F7;
 }
@@ -124,10 +124,12 @@
 
 .calendar__space {
     border-right: 3px solid #F2F2F7;
-    border-bottom: 3px solid #F2F2F7;
     position: sticky;
     top: 0;
     background-color: white;
+    z-index: 2;
+    margin-bottom: 15px;
+    margin-right: -12px;
 }
 
 .calendar__top {
@@ -143,6 +145,10 @@
     position: sticky;
     top: 0;
     background-color: white;
+}
+
+.first {
+    padding-left: 9px;
 }
 
 .calendar__top_month,
@@ -185,13 +191,29 @@
 }
 
 .calendar__unit {
-    /* min-height: 64px; */
     border-right: 3px solid #F2F2F7;
     border-bottom: 3px solid #F2F2F7;
-    /* background-color: white; */
 }
 
-
+.calendar__unit_hour {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #8E8E93;
+    margin: 0;
+    
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10px;
+    
+    padding-right: 15px;
+    margin-right: -12px;
+}
 
 
 
