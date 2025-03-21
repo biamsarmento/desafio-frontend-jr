@@ -1,0 +1,135 @@
+.calendar {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 0.77fr 1.05fr repeat(6, 1fr);
+    grid-template-rows: 1fr repeat(24, 64px);
+    overflow-y: scroll;
+    border-top: 3px solid #F2F2F7;
+}
+
+::-webkit-scrollbar {
+    width: 16px; 
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+    border: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E5E5EA; 
+    border-radius: 28px;
+    height: 300px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A1A1AA; 
+}
+
+.calendar__space {
+    border-right: 3px solid #F2F2F7;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 5;
+    margin-bottom: 15px;
+    margin-right: -12px;
+}
+
+.calendar__top {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid #F2F2F7;
+    border-bottom: 3px solid #F2F2F7;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 4;
+}
+
+.first {
+    margin-left: 9px;   
+    border-left: 3px solid #F2F2F7;
+}
+
+.calendar__top_month,
+.calendar__top_number,
+.calendar__top_day {
+    margin: 0;
+    padding: 0;
+}
+
+.calendar__top_month {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    margin-bottom: 8px;
+}
+
+.calendar__top_number {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    margin-bottom: 6px;
+}
+
+.calendar__top_day {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    opacity: 0.35;
+}
+
+.today {
+    color: #5856D6;
+}
+
+.calendar__unit {
+    border-right: 3px solid #F2F2F7;
+    border-bottom: 3px solid #F2F2F7;
+    padding: 16px;
+}
+
+.calendar__unit_hour {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #8E8E93;
+    margin: 0;
+    
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -25px;
+    padding-right: 15px;
+    margin-right: -12px;
+    z-index: 3;
+}
+
+/* Borders */
+
+.right-border-none {
+    border-right: none;
+}
+
+.bottom-border-none {
+    border-bottom: 0;
+}

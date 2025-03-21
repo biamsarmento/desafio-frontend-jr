@@ -1,0 +1,12 @@
+.page {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #F2F2F7;
+    padding-top: calc((100vh - 700px) /2);
+    padding-bottom: calc((100vh - 700px) /2);
+}
