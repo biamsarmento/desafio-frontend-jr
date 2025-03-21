@@ -42,6 +42,8 @@ Este projeto me ajudou a reforçar conceitos importantes, como:
 
 ## 🔧 Como Rodar o Projeto
 
+### Utilize a extensão LiveServer do VS Code para ver o resultado no navegador!  
+
 ### 📦 Clonando o Repositório
 ```bash
 git clone https://github.com/biamsarmento/desafio-calendario.git
