@@ -267,12 +267,18 @@
 
 .line__dot {
     position: sticky;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background-color: #5856D6;
+    border: 0;
     border-radius: 50%;
     z-index: 3;
     top: 0;
+    margin-top: -22px;
+    margin-left: 60px;
+    align-self: center;
+    justify-self: center;
+    padding: 0;
     /* display: none; */
 }
 

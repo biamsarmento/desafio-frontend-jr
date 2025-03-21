@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         limparEventos();
 
-        limparLinha();
+        limparLinhaDot();
 
         carregarEventos();
 
-        inserirLinhaHorarioAtual();
+        inserirLinhaDot();
     }
 
        
@@ -157,7 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const celula = document.querySelectorAll('.calendar__unit')[indiceLinha * 8 + (indiceColuna + 1)];
 
         if (celula) {
-            console.log("Adicionando evento na célula: ", celula);
             const eventoElemento = document.createElement('div');
             eventoElemento.classList.add('event');
             eventoElemento.style.backgroundColor = evento.cor;
@@ -184,12 +183,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function limparLinha() {
+    function limparLinhaDot() {
         const LinhaElements = document.querySelectorAll('.line');
         LinhaElements.forEach(evento => evento.remove());
+        const DotElements = document.querySelectorAll('.line__dot');
+        DotElements.forEach(evento => evento.remove());
     }
 
-    function inserirLinhaHorarioAtual() {
+    function inserirLinhaDot() {
         const agora = new Date();
         const diaAtual = agora.getDate();
         const horaAtual = agora.getHours();
@@ -212,11 +213,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 indiceColuna = index;
             }
         });
-
-        console.log("DIA ATUAL: ", diaAtual);
     
         if (indiceColuna === -1) {
-            console.warn("Dia atual não está visível no calendário.");
             return;
         } else {
     
@@ -246,11 +244,11 @@ document.addEventListener("DOMContentLoaded", function () {
         linhaNova.classList.add("line");
         proximaUnit.appendChild(linhaNova);
 
-        // const lineBall = document.querySelectorAll('.calendar__unit')[indiceLinha * 8 + (indiceColuna + 1)];
+        const lineBall = document.querySelectorAll('.calendar__unit')[indiceLinha * 8 + (indiceColuna + 1)];
 
-        // const bolaNova = document.createElement("div");
-        // linhaNova.classList.add("line__dot");
-        // lineBall.appendChild(bolaNova);
+        const bolaNova = document.createElement("div");
+        bolaNova.classList.add("line__dot");
+        lineBall.appendChild(bolaNova);
         }
     }
 
@@ -271,6 +269,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     carregarEventos();
-    inserirLinhaHorarioAtual();
+    inserirLinhaDot();
     updateCalendar();
 });
