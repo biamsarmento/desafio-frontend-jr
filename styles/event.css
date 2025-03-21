@@ -1,26 +1,73 @@
-.event {
-    border-radius: 12px;
-    opacity: 0.32;
-    box-sizing: border-box;
-    position: sticky;
-    margin: 0;
-    z-index: 2;
-    overflow: hidden;
-    text-overflow: ellipsis;
+@media (min-width: 450px) {
+    .event {
+        border-radius: 12px;
+        opacity: 0.32;
+        box-sizing: border-box;
+        position: sticky;
+        margin: 0;
+        z-index: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .event:hover {
+        opacity: 0.64;
+    }
+    
+    .event__title {
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        margin: 0;
+        padding: 8px 8px 0 8px;
+        text-overflow: ellipsis;
+    
+        white-space: normal; 
+        word-break: break-word; 
+        overflow-wrap: break-word;
+    }
 }
 
-.event:hover {
-    opacity: 0.64;
-}
-
-.event__title {
-    font-family: Inter;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    vertical-align: middle;
-    margin: 0;
-    padding: 8px 8px 0 8px;
-    text-overflow: ellipsis;
+@media (min-width: 750px) {
+    .event {
+        border-radius: 12px;
+        opacity: 0.32;
+        box-sizing: border-box;
+        position: sticky;
+        margin: 0;
+        z-index: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .event:hover {
+        opacity: 0.64;
+    }
+    
+    .event__title {
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        margin: 0;
+        padding: 8px 8px 0 8px;
+        text-overflow: ellipsis;
+    
+        white-space: normal; 
+        word-break: break-word; 
+        overflow-wrap: break-word;
+    }
 }

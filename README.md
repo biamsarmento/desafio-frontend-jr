@@ -1,32 +1,48 @@
-# Desafio Técnico - Desenvolvedor Frontend Júnior
+# 🗓️ Calendário de Eventos
 
-Bem-vindo ao desafio técnico para a vaga de Desenvolvedor Frontend Júnior na Simplify Tecnologia! 🎉
+## 📖 Sobre o Projeto
 
-O objetivo deste desafio é entender como você estrutura seu código, suas habilidades com HTML, CSS e JavaScript puro (vanilla JS), além de avaliar atenção aos detalhes e fidelidade ao layout proposto.
+**Calendário de Eventos** é uma aplicação web construída com **HTML, CSS e JavaScript puro (vanilla JS)** como parte de um desafio técnico para a vaga de Desenvolvedor Frontend Júnior na **Simplify Tecnologia**. O componente principal é um **calendário interativo**, que exibe eventos extraídos de um arquivo JSON.
 
-## Descrição
-- Desenvolva uma aplicação web utilizando HTML, JS e CSS para implementar o componente definido no [Figma](https://www.figma.com/design/imYbkhqGWDeSqTe7uYdhwH/Simplify-Tecnologia%3A-Desafio-T%C3%A9cnico---Desenvolvedor-Frontend-J%C3%BAnior?node-id=0-1&t=U33yR0AbOCMsNx8v-1).
+### Funcionalidades:
+- **Exibição de Eventos**: Os dados são consumidos a partir de um arquivo `eventos.json` e apresentados visualmente no calendário.  
+- **Layout Responsivo**: Aqui está o design fornecido no [Figma](https://www.figma.com/design/imYbkhqGWDeSqTe7uYdhwH/Simplify-Tecnologia%3A-Desafio-T%C3%A9cnico---Desenvolvedor-Frontend-J%C3%BAnior?node-id=0-1&t=U33yR0AbOCMsNx8v-1).  
+- **Interface Intuitiva**: Navegação simples e foco na clareza visual para facilitar a visualização dos eventos.  
 
-## Requisitos
-- Os dados dos eventos estarão no arquivo [eventos.json](eventos.json) que você deve consumir e exibir no calendário.
-- O layout deve seguir o design proposto no Figma.
-- A implementação deve ser feita usando apenas HTML, CSS e JavaScript puro, sem uso de frameworks (exemplo: React, Vue) ou bibliotecas de terceiros (exemplo: jQuery).
-- Não é necessário implementer a criação, atualização ou deleção de eventos.
+## 🎯 Objetivo
 
-## Instruções
-- Fazer um fork do repositório para sua conta pessoal do GitHub.
-- Trabalhar utilizando commits.
-- Documentar como executar sua aplicação.
-- Ao finalizar, envie o link do seu repositório para contato@simplifytec.com.br.
+O principal objetivo foi demonstrar minha capacidade de:
+- Trabalhar com **HTML, CSS e JavaScript puro**
+- **Consumir dados dinâmicos** de arquivos externos
+- Manter um código **organizado e funcional**
+- Reproduzir com fidelidade um layout do Figma
 
-## Diferenciais (não obrigatórios):
-- Responsividade para dispositivos móveis.
-- Animações sutis para melhorar a experiência do usuário.
-- Testes simples para validar a lógica do componente.
+## 🚀 Resultado
 
-## O que será avaliado:
-✅ Organização e estrutura do código  
-✅ Clareza e simplicidade na solução  
-✅ Fidelidade visual ao layout do Figma  
-✅ Lógica e uso correto de JavaScript puro  
-✅ Atenção aos detalhes
+O resultado é uma aplicação funcional que apresenta corretamente os eventos no calendário, mantendo a estrutura visual definida no design.  
+
+## 🛠️ Tecnologias e Ferramentas Utilizadas
+
+### **Front-End**
+- HTML  
+- CSS  
+- JavaScript (Vanilla JS)  
+
+### **Design**
+- Figma (para referência visual)  
+- JSON (como fonte de dados dos eventos)
+
+## 📚 O Que Eu Aprendi
+
+Este projeto me ajudou a reforçar conceitos importantes, como:
+- **Manipulação do DOM** com JavaScript puro  
+- **Consumo de dados JSON** localmente  
+- **Tradução precisa de layouts do Figma para código**  
+- Importância da **atenção aos detalhes** na interface
+
+## 🔧 Como Rodar o Projeto
+
+### 📦 Clonando o Repositório
+```bash
+git clone https://github.com/biamsarmento/desafio-calendario.git
+cd desafio-calendario
