@@ -38,8 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         limparEventos();
 
+        limparLinha();
+
         carregarEventos();
+
+        inserirLinhaHorarioAtual();
     }
+
+       
 
     function limparEventos() {
         const eventoElements = document.querySelectorAll('.event');
@@ -71,12 +77,21 @@ document.addEventListener("DOMContentLoaded", function () {
         const dataFim = new Date(evento.data_fim);
 
         const startOfWeek = new Date(currentDate);
+
         startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
+
         const endOfWeek = new Date(startOfWeek);
         endOfWeek.setDate(startOfWeek.getDate() + 6); 
 
-        if (dataInicio < startOfWeek || dataInicio > endOfWeek) {
-            console.log(`Evento "${evento.nome}" não está na semana exibida.`);
+        function resetTime(date) {
+            return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        }
+        
+        const dataInicioSemHora = resetTime(dataInicio);
+        const startOfWeekSemHora = resetTime(startOfWeek);
+        const endOfWeekSemHora = resetTime(endOfWeek);
+        
+        if (dataInicioSemHora < startOfWeekSemHora || dataInicioSemHora > endOfWeekSemHora) {
             return;
         }
 
@@ -110,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
         
             if (horaTexto === horaNoCalendario) {
                 indiceLinha = index;
-                console.log("ACHEI: ", horaTexto, horaNoCalendario);
             }
         });
 
@@ -170,6 +184,67 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function limparLinha() {
+        const LinhaElements = document.querySelectorAll('.line');
+        LinhaElements.forEach(evento => evento.remove());
+    }
+
+    function inserirLinhaHorarioAtual() {
+        const agora = new Date();
+        const diaAtual = agora.getDate();
+        const horaAtual = agora.getHours();
+        const minutosAtuais = agora.getMinutes();
+    
+        const colunasDia = document.querySelectorAll('.calendar__top_number');
+        let indiceColuna = -1;
+    
+        colunasDia.forEach((elemento, index) => {
+            if (parseInt(elemento.textContent.trim()) === diaAtual) {
+                indiceColuna = index;
+            }
+        });
+
+        console.log("DIA ATUAL: ", diaAtual);
+    
+        if (indiceColuna === -1) {
+            console.warn("Dia atual não está visível no calendário.");
+            return;
+        } else {
+    
+        const linhasHora = document.querySelectorAll('.calendar__unit_hour');
+        let indiceLinha = -1;
+        let posicaoLinha = 0;
+    
+        linhasHora.forEach((elemento, index) => {
+            const horaTexto = elemento.textContent.trim();
+            const horaFormatada = (horaAtual % 12 === 0 ? 12 : horaAtual % 12);
+            const sufixo = horaAtual < 12 ? ' AM' : ' PM';
+            const horaNoCalendario = `${horaFormatada}${sufixo}`;
+
+            if (horaTexto === horaNoCalendario) {
+                indiceLinha = index;
+            }
+        });
+    
+        if (indiceLinha === -1) {
+            console.warn("Não foi possível encontrar a linha para a hora:", horaAtual);
+            return;
+        }
+
+        const proximaUnit = document.querySelectorAll('.calendar__unit')[indiceLinha * 8 + 1];
+
+        const linhaNova = document.createElement("div");
+        linhaNova.classList.add("line");
+        proximaUnit.appendChild(linhaNova);
+
+        // const lineBall = document.querySelectorAll('.calendar__unit')[indiceLinha * 8 + (indiceColuna + 1)];
+
+        // const bolaNova = document.createElement("div");
+        // linhaNova.classList.add("line__dot");
+        // lineBall.appendChild(bolaNova);
+        }
+    }
+
     // Event Listeners
     leftArrow.addEventListener("click", function () {
         currentDate.setDate(currentDate.getDate() - 7);
@@ -187,5 +262,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     carregarEventos();
+    inserirLinhaHorarioAtual();
     updateCalendar();
 });

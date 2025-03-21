@@ -153,7 +153,8 @@
 }
 
 .first {
-    padding-left: 9px;
+    /* padding-left: 9px; */
+    margin-left: 9px;
 }
 
 .calendar__top_month,
@@ -248,6 +249,31 @@
     margin: 0;
     padding: 8px 8px 0 8px;
     text-overflow: ellipsis;
+}
+
+.line {
+    height: 3px;
+    background-color: #5856D6;
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    margin-top: -19px;
+    margin-left: -23px;
+    margin-right: -58.9vw;
+}
+
+.line__dot {
+    position: sticky;
+    width: 8px;
+    height: 8px;
+    background-color: #5856D6;
+    border-radius: 50%;
+    z-index: 7;
+    top: 0;
+    /* display: none; */
 }
 
 
