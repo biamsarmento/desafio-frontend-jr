@@ -199,7 +199,16 @@ document.addEventListener("DOMContentLoaded", function () {
         let indiceColuna = -1;
     
         colunasDia.forEach((elemento, index) => {
-            if (parseInt(elemento.textContent.trim()) === diaAtual) {
+            const diaElement = elemento;
+            const mesElement = diaElement.parentElement.querySelector(".calendar__top_month");
+
+            const mesTexto = mesElement.textContent.trim();
+            const mesIndex = monthNames.indexOf(mesTexto);
+
+            if (
+                parseInt(diaElement.textContent.trim()) === diaAtual &&
+                mesIndex === agora.getMonth()
+            ) {
                 indiceColuna = index;
             }
         });
