@@ -129,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (indiceLinha === -1) {
-            console.warn("Não foi possível encontrar a linha para a hora:", horaInicio);
             return;
         }
 
@@ -194,7 +193,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const agora = new Date();
         const diaAtual = agora.getDate();
         const horaAtual = agora.getHours();
-        const minutosAtuais = agora.getMinutes();
     
         const colunasDia = document.querySelectorAll('.calendar__top_number');
         let indiceColuna = -1;
@@ -220,7 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
         const linhasHora = document.querySelectorAll('.calendar__unit_hour');
         let indiceLinha = -1;
-        let posicaoLinha = 0;
     
         linhasHora.forEach((elemento, index) => {
             const horaTexto = elemento.textContent.trim();
